@@ -1,0 +1,25 @@
+def kmhGeciciFaiz(cekilenMiktar, herAyOdeme,geciciPara,geciciGun):
+    kmhFaizi = 0.065
+    gecenAy = 0
+    toplamOdeme = 0
+    cekilenMiktar = float(cekilenMiktar)
+    while cekilenMiktar > 0 and gecenAy < 50: 
+        gecenAy = gecenAy + 1 
+        geciciFaiz = ((cekilenMiktar - geciciPara) * kmhFaizi) / geciciGun 
+        gecmeyeciFaiz = ((cekilenMiktar * kmhFaizi) / (30-geciciGun)) 
+        toplamFaiz = geciciFaiz + gecmeyeciFaiz 
+        cekilenMiktar = cekilenMiktar + toplamFaiz
+        if cekilenMiktar < herAyOdeme:
+            herAyOdeme = cekilenMiktar
+            cekilenMiktar = 0
+        else:
+            cekilenMiktar = cekilenMiktar - herAyOdeme
+        toplamOdeme = toplamOdeme + herAyOdeme
+        print("\nKalan Miktar: ", cekilenMiktar)
+        print("Geçen Süre Ay: " ,gecenAy)
+        print("Toplam Ödeme" ,toplamOdeme)
+    if gecenAy > 50: 
+        print("bu borç bitmez hacı")
+
+
+kmhGeciciFaiz(cekilenMiktar=300000.0,herAyOdeme=25000.0,geciciPara = 10000, geciciGun=10)
