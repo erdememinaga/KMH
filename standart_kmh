@@ -1,0 +1,14 @@
+def kmh(cekilenMiktar, herAyOdeme):
+    kmhFaizi = 1.065
+    gecenAy = 0
+    toplamOdeme = 0
+    cekilenMiktar = float(cekilenMiktar)
+    while cekilenMiktar > 0: 
+        gecenAy = gecenAy + 1 
+        cekilenMiktar = cekilenMiktar * kmhFaizi
+        cekilenMiktar = cekilenMiktar - herAyOdeme
+        toplamOdeme = toplamOdeme + herAyOdeme
+        print("Kalan Miktar", cekilenMiktar)
+        print("Geçen Ay" ,gecenAy)
+        print("ToplamOdeme" ,toplamOdeme)
+kmh(300000.0,25000)
