@@ -1,0 +1,9 @@
+def ayaGoreKMH(cekilenMiktar, odemeSuresi):
+    kmhFaizi = 1.065
+    aylikOdeme = cekilenMiktar * (kmhFaizi ** odemeSuresi) * (kmhFaizi - 1) / ((kmhFaizi ** odemeSuresi) - 1)
+    toplamOdeme = aylikOdeme * odemeSuresi
+    
+    print(f"Aylık ödemeniz gereken miktar: {aylikOdeme:.2f} TL")
+    print(f"Toplam ödeme miktarı: {toplamOdeme:.2f} TL")
+    return aylikOdeme
+ayaGoreKMH(cekilenMiktar= 100.0, odemeSuresi= 12)
