@@ -5,8 +5,13 @@ def kmhGeciciFaiz(cekilenMiktar, herAyOdeme,geciciPara,geciciGun):
     cekilenMiktar = float(cekilenMiktar)
     while cekilenMiktar > 0 and gecenAy < 50: 
         gecenAy = gecenAy + 1 
-        geciciFaiz = ((cekilenMiktar - geciciPara) * kmhFaizi) / geciciGun 
-        gecmeyeciFaiz = ((cekilenMiktar * kmhFaizi) / (30-geciciGun)) 
+        geciciFaiz = 0
+        if geciciGun != 0:
+            gecmeyeciFaiz = ((cekilenMiktar * kmhFaizi) / 30 * (30-geciciGun)) 
+            geciciFaiz = ((cekilenMiktar - geciciPara) * kmhFaizi) / 30 * geciciGun 
+        else:
+            geciciFaiz = 0
+            gecmeyeciFaiz = ((cekilenMiktar * kmhFaizi)) 
         toplamFaiz = geciciFaiz + gecmeyeciFaiz 
         cekilenMiktar = cekilenMiktar + toplamFaiz
         if cekilenMiktar < herAyOdeme:
@@ -21,5 +26,4 @@ def kmhGeciciFaiz(cekilenMiktar, herAyOdeme,geciciPara,geciciGun):
     if gecenAy > 50: 
         print("bu borç bitmez hacı")
 
-
-kmhGeciciFaiz(cekilenMiktar=300000.0,herAyOdeme=25000.0,geciciPara = 10000, geciciGun=10)
+kmhGeciciFaiz(cekilenMiktar=300000.0,herAyOdeme=25000.0,geciciPara = 120000, geciciGun=20)
