@@ -26,4 +26,4 @@ def kmhGeciciFaiz(cekilenMiktar, herAyOdeme,geciciPara,geciciGun):
     if gecenAy > 50: 
         print("bu borç bitmez hacı")
 
-kmhGeciciFaiz(cekilenMiktar=300000.0,herAyOdeme=25000.0,geciciPara = 120000, geciciGun=20)
+kmhGeciciFaiz(cekilenMiktar=300000.0, herAyOdeme=25000.0, geciciPara = 120000, geciciGun=20)
